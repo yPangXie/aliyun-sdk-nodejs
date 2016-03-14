@@ -1,0 +1,14 @@
+{
+    "name": "aliyun-sdk-nodejs",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "start": "node --harmony app.js"
+    },
+    "main": "app.js",
+    "dependencies": {
+        "aliyun-sdk": "*",
+        "request": "*",
+        "uuid": "*"
+    }
+}
