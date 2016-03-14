@@ -4,9 +4,13 @@ const querystring = require('querystring');
 const request = require('request');
 const sign = require('./sign');
 
+/* 常量 */
+const ACCESS_ID = 'Your access id';
+const ACCESS_SECRET = 'Your access secret';
+
 /* 生成query kv数据 */
 let paramsObject = sign.generateQueryKV({
-    "AccessKeyId": "Your Access Key",
+    "AccessKeyId": ACCESS_ID,
     "RegionId": "cn",
     "Project": "acs_ecs",
     "period": "60", /* 非必填, 默认为注册监控项时申明的上报周期 */
@@ -16,7 +20,7 @@ let paramsObject = sign.generateQueryKV({
 });
 
 /* 生成signature */
-paramsObject.Signature = encodeURIComponent(sign.generateSignature(paramsObject, "Your Access Secret with suffic '&'"));
+paramsObject.Signature = encodeURIComponent(sign.generateSignature(paramsObject, ACCESS_SECRET + '&'));
 
 /* 拼接请求地址 */
 let query = [];
