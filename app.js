@@ -13,7 +13,7 @@ let paramsObject = sign.generateQueryKV({
     "period": "60", /* 非必填, 默认为注册监控项时申明的上报周期 */
     "Metric": "InternetOut",
     "StartTime": '2016-03-01T00:00:00Z',
-    "Dimensions": '{instanceId:"Your instance id"}'
+    "Dimensions": '{instanceId:"'+ config.instance_id +'"}'
 });
 
 /* 生成signature */
